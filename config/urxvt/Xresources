@@ -1,0 +1,43 @@
+URxvt.font: xft:Ricty Diminished Discord:bold:size=11:antialiase=true
+! URxvt.boldFont:
+URxvt.scrollBar:    false
+Urxvt*scrollTtyOutput : false
+URxvt*scrollWithBuffer: true
+Urxvt*scrollTtyKeypress: true
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+URxvt.pointerBlank: true
+Urxvt.secondaryScreen: 1
+Urxvt.secondaryScroll: 0
+Urxvt.internalBorder: 10
+urxvt.letterSpace: 0
+/* URxvt.transparent: true */
+/* URxvt.shading: 20 */
+
+/*  URxvt*depth: 32 */
+! urxvt*fading: 50
+
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+
+
+urxvt*depth: 32
+urxvt*background: rgba:0000/0000/0000/cccc
+/* URxvt.background: #000000 */
+URxvt.foreground: #F8F8F2
+URxvt.color0:     #000000
+URxvt.color1:     #FF5555
+URxvt.color9:     #FF6E67
+URxvt.color2:     #50FA7B
+URxvt.color10:    #5AF78E
+URxvt.color3:     #F1FA8C
+URxvt.color11:    #F4F99D
+URxvt.color4:    #BD93F9
+URxvt.color12:   #CAA9FA
+URxvt.color5:    #FF79C6
+URxvt.color13:   #FF92D0
+URxvt.color6:    #8BE9FD
+URxvt.color7:    #BFBFBF
+URxvt.color15:   #E6E6E6
+URxvt.color14:   #FFBF00
+URxvt.color8:    #FFBF00
