@@ -1,4 +1,5 @@
 [submodule "modules/nvim"]
 	path = modules/nvim
 	url = https://github.com/NvChad/NvChad
-	branch = main
+  branch = main
+  ignore = dirty
