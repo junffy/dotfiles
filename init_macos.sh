@@ -5,6 +5,7 @@ git config --global user.email abc22921@gmail.com
 git config --global color.ui auto
 git config --global core.editor 'vim -c "set fenc=utf-8"'
 if [ ! -d $HOME/dotfiles ]; then
+    echo "Installing dotfiles..."
     git clone "https://github.com/junffy/dotfiles" ~/dotfiles
 fi
 
