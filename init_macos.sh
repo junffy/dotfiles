@@ -10,8 +10,7 @@ if [ ! -d $HOME/dotfiles ]; then
 fi
 
 # neovim & nvchad
-ln -sf $HOME/dotfiles/modules/nvim $HOME/.config/nvim
-ln -sf $HOME/dotfiles/config/nvim $HOME/.config/nvim/lua/
+ln -sf $HOME/dotfiles/config/nvim $HOME/.config/nvim/
 
 # tmux 
 ln -sf $HOME/dotfiles/config/tmux/.tmux.conf $HOME/.tmux.conf
