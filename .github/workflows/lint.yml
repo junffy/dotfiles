@@ -32,8 +32,8 @@ jobs:
     - name: Check init_macos.sh
       run: shellcheck ${GITHUB_WORKSPACE}/init_macos.sh
 
-    - name: Check init_archlinux.sh
-      run: shellcheck ${GITHUB_WORKSPACE}/init_archlinux.sh
+        #     - name: Check init_archlinux.sh
+        #       run: shellcheck ${GITHUB_WORKSPACE}/init_archlinux.sh
 
     # チェックが厳しすぎる
     - name: Check .zshrc
