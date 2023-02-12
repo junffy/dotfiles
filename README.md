@@ -1,6 +1,6 @@
 # dotfiles
-![macos](https://github.com/rtakasuke/.dotfiles/workflows/macos/badge.svg)
+![macos](https://github.com/junffy/dotfiles/workflows/macos/badge.svg)
 <br>
-![lint](https://github.com/rtakasuke/.dotfiles/workflows/lint/badge.svg)
+![lint](https://github.com/junffy/dotfiles/workflows/lint/badge.svg)
 
 
