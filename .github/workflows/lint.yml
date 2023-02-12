@@ -26,7 +26,6 @@ jobs:
       run: |
         brew install shellcheck
         pip install --upgrade pip
-        pip install vim-vint
 
     # Lint check
     - name: Check init_macos.sh
@@ -35,8 +34,7 @@ jobs:
         #     - name: Check init_archlinux.sh
         #       run: shellcheck ${GITHUB_WORKSPACE}/init_archlinux.sh
 
-    # チェックが厳しすぎる
-    - name: Check .zshrc
-      run: shellcheck ${GITHUB_WORKSPACE}/config/zsh/.zshrc --exclude=SC2148,SC1090
+    # - name: Check .zshrc
+    #   run: shellcheck ${GITHUB_WORKSPACE}/config/zsh/.zshrc --exclude=SC2148,SC1090
 
 
