@@ -14,6 +14,8 @@ alias oo='open .'
 alias vi='nvim'
 alias vim='nvim'
 
+# home directory
+export HOME=/Users/junffy
 
 # check global IP
 alias myip='curl ifconfig.io -4'
@@ -175,3 +177,5 @@ setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor       # get more colors
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
+# path for flutter tool 
+export PATH="$PATH:$HOME/dev/flutter/bin"
