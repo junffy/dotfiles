@@ -179,3 +179,4 @@ bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode che
 
 # path for flutter tool 
 export PATH="$PATH:$HOME/dev/flutter/bin"
+
