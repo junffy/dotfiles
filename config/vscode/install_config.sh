@@ -1,3 +1,7 @@
+#!/bin/sh
+SCRIPT_DIR=$(cd $(dirname $0) && pwd)
+VSCODE_SETTING_DIR=~/Library/Application\ Support/Code/User
+
 # Visual Studio Code
 # backup
 mkdir "$SCRIPT_DIR/backup"
