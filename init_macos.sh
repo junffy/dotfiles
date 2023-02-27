@@ -1,3 +1,4 @@
+#!/bin/sh
 # git config for global
 git config --global user.name "Jun Iwamoto"
 git config --global user.email abc22921@gmail.com
