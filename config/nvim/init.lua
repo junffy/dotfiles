@@ -118,12 +118,7 @@ vim.o.smartcase = true
 vim.o.updatetime = 250
 vim.wo.signcolumn = 'yes'
 
--- Set colorscheme
-vim.o.termguicolors = true
-vim.cmd [[colorscheme onedark]]
 
--- Set completeopt to have a better completion experience
-vim.o.completeopt = 'menuone,noselect'
 
 -- [[ Basic Keymaps ]]
 -- Set <space> as the leader key
@@ -151,16 +146,6 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   pattern = '*',
 })
 
--- Set lualine as statusline
--- See `:help lualine.txt`
-require('lualine').setup {
-  options = {
-    icons_enabled = false,
-    theme = 'onedark',
-    component_separators = '|',
-    section_separators = '',
-  },
-}
 
 -- Enable Comment.nvim
 require('Comment').setup()
@@ -426,3 +411,21 @@ cmp.setup {
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+
+if not vim.g.vscode then
+  -- Set completeopt to have a better completion experience
+  vim.o.completeopt = 'menuone,noselect'
+  -- Set colorscheme
+  vim.o.termguicolors = true
+  vim.cmd [[colorscheme onedark]]
+  -- Set lualine as statusline
+  -- See `:help lualine.txt`
+  require('lualine').setup {
+    options = {
+      icons_enabled = false,
+      theme = 'onedark',
+      component_separators = '|',
+      section_separators = '',
+    },
+  }
+end
