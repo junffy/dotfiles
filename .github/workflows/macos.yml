@@ -2,30 +2,37 @@ name: macos
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+
+permissions:
+  contents: read
 
 jobs:
-  macos-test:
+  dotfiles:
+    name: "dotfiles"
     runs-on: macos-latest
 
+    defaults:
+      run:
+        shell: bash
+
     steps:
-    - uses: actions/checkout@v2
+      - uses: actions/checkout@v2
 
-    # Error Check
-    - name: Run brew bundle
-      run: brew bundle
+      # Error Check
+      - name: Run brew bundle
+        run: brew bundle
+#      - name: Run init.sh
+#        run:
+#          ${GITHUB_WORKSPACE}/init_macos.sh
 
-    - name: Run init.sh
-      run: ${GITHUB_WORKSPACE}/init_macos.sh
+#     - name: Load .bash_profile
+#       run: |
+#         bash ~/.bash_profile 2> error.log; cat error.log
+#         if [ -s error.log ]; then false; fi
 
-        #     - name: Load .bash_profile
-        #       run: |
-        #         bash ~/.bash_profile 2> error.log; cat error.log
-        #         if [ -s error.log ]; then false; fi
-
-        #     - name: Load .bashrc
-        #       run: |
-        #         bash ~/.bashrc 2> error.log; cat error.log
-        #         if [ -s error.log ]; then false; fi
+#     - name: Load .bashrc
+#       run: |
+#         bash ~/.bashrc 2> error.log; cat error.log
+#         if [ -s error.log ]; then false; fi
