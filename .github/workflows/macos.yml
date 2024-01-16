@@ -20,19 +20,13 @@ jobs:
     steps:
       - uses: actions/checkout@v2
 
-      # Error Check
+      - name: Install Homebrew
+        run: |
+          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+
       - name: Run brew bundle
-        run: brew bundle
-#      - name: Run init.sh
-#        run:
-#          ${GITHUB_WORKSPACE}/init_macos.sh
-
-#     - name: Load .bash_profile
-#       run: |
-#         bash ~/.bash_profile 2> error.log; cat error.log
-#         if [ -s error.log ]; then false; fi
-
-#     - name: Load .bashrc
-#       run: |
-#         bash ~/.bashrc 2> error.log; cat error.log
-#         if [ -s error.log ]; then false; fi
+        run: |
+          brew bundle
+          brew link --overwrite cocoapods
+          brew unlink go@1.20
+          brew link --overwrite go
