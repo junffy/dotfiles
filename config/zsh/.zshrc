@@ -26,15 +26,16 @@ _look() {
     local find_result
     find_result=$(find . -type f -o -type l)
   else
-    local find_result=$(find . -maxdepth 1 -type f -o -type l)
+    local find_result
+    find_result=$(find . -maxdepth 1 -type f -o -type l)
   fi
-  local target_files=($(echo "$find_result" \
-    | sed 's/\.\///g' \
+  local target_files
+  mapfile -t target_files < <(echo "$find_result" | sed 's/\.\///g'
     | grep -v -e '.jpg' -e '.gif' -e '.png' -e '.jpeg' \
     | sort -r \
     | fzf-tmux -p80% --select-1 --prompt 'vim ' --preview 'bat --color always {}' --preview-window=right:70%
   ))
-  [ "$target_files" = "" ] && return
+  [[ -z "${target_files[*]}" ]] && return
   vim -p "${target_files[@]}"
 }
 
@@ -43,13 +44,13 @@ alias prr='_git_checkout_from_pr'
 _git_checkout_from_pr() {
   local pr=$(gh pr list --search "NOT bump in:title" | fzf | awk '{print $1}')
   [ -z "$pr" ] && return
-  gh pr checkout $pr
+  gh pr checkout "$pr"
 }
 
 # move to the directory opened in Finder with Terminal
 alias cdf='_cd_opend_finder'
 _cd_opend_finder() {
-  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')";
+  cd "$(osascript -e 'tell app "Finder" to POSIX path of (insertion location as alias)')" || exit;
 }
 
 
@@ -62,7 +63,7 @@ export XDG_CONFIG_HOME=~/.config
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%)1:-%n}.zsh"
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
