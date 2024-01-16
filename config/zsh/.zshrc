@@ -30,11 +30,8 @@ _look() {
     find_result=$(find . -maxdepth 1 -type f -o -type l)
   fi
   local target_files
-  mapfile -t target_files < <(echo "$find_result" | sed 's/\.\///g'
-    | grep -v -e '.jpg' -e '.gif' -e '.png' -e '.jpeg' \
-    | sort -r \
-    | fzf-tmux -p80% --select-1 --prompt 'vim ' --preview 'bat --color always {}' --preview-window=right:70%
-  ))
+  mapfile -t target_files < <(echo "$find_result" | sed 's/\.\///g' | grep -v -e '.jpg' -e '.gif' -e '.png' -e '.jpeg' | sort -r  | fzf-tmux -p80% --select-1 --prompt 'vim ' --preview 'bat --color always {}' --preview-window=right:70%)
+
   [[ -z "${target_files[*]}" ]] && return
   vim -p "${target_files[@]}"
 }
