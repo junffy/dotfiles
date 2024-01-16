@@ -23,7 +23,8 @@ alias myip='curl ifconfig.io -4'
 alias lk='_look'
 _look() {
   if [ "$1" = "-a" ]; then
-    local find_result=$(find . -type f -o -type l)
+    local find_result
+    find_result=$(find . -type f -o -type l)
   else
     local find_result=$(find . -maxdepth 1 -type f -o -type l)
   fi
@@ -34,7 +35,7 @@ _look() {
     | fzf-tmux -p80% --select-1 --prompt 'vim ' --preview 'bat --color always {}' --preview-window=right:70%
   ))
   [ "$target_files" = "" ] && return
-  vim -p ${target_files[@]}
+  vim -p "${target_files[@]}"
 }
 
 # checkout to the PR branch
@@ -61,7 +62,7 @@ export XDG_CONFIG_HOME=~/.config
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%)1:-%n}.zsh"
 fi
 
 # If you come from bash you might have to change your $PATH.
