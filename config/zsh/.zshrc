@@ -39,7 +39,8 @@ _look() {
 # checkout to the PR branch
 alias prr='_git_checkout_from_pr'
 _git_checkout_from_pr() {
-  local pr=$(gh pr list --search "NOT bump in:title" | fzf | awk '{print $1}')
+  local pr
+  pr=$(gh pr list --search "NOT bump in:title" | fzf | awk '{print $1}')
   [ -z "$pr" ] && return
   gh pr checkout "$pr"
 }
@@ -62,6 +63,7 @@ export XDG_CONFIG_HOME=~/.config
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
+
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
