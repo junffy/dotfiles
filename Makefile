@@ -1,6 +1,6 @@
 # Do everything.
 
-all : init defaults_macos brew
+all : init defaults_macos
 
 # Set initial preference.
 init:
