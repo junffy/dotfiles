@@ -1,14 +1,18 @@
 # Do everything.
 
-all : init link defaults_macos brew
+all : init link_macos defaults_macos brew
 
 # Set initial preference.
 init:
-	script/init_macos.sh
+	script/init.sh
 
-# Link dotfiles.
-link:
-	script/link.sh
+# Link dotfiles for macos.
+link_macos:
+	script/link_macos.sh
+
+# Link dotfiles for arch linux.
+link_macos:
+	script/link_arch_linux.sh
 
 # Set macOS system preferences.
 defaults_macos:

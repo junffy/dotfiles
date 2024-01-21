@@ -1,9 +1,4 @@
 #!/bin/sh
-# git config for global
-git config --global user.name "Jun Iwamoto"
-git config --global user.email junffy73@gmail.com
-git config --global color.ui auto
-git config --global core.editor 'vim -c "set fenc=utf-8"'
 
 # If dotfile does not exist, clone it
 if [ ! -d "$HOME"/dotfiles ]; then
