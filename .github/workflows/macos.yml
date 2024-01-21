@@ -1,32 +1,25 @@
-name: macos
+name: "dotfiles"
 
 on:
   push:
-    branches: [main]
+    branches: ["main"]
   pull_request:
-
-permissions:
-  contents: read
 
 jobs:
   dotfiles:
     name: "dotfiles"
     runs-on: macos-latest
 
+    # Use the Bash shell regardless whether the GitHub Actions runner is ubuntu-latest, macos-latest, or windows-latest
     defaults:
       run:
-        shell: bash
+        shell: zsh
 
     steps:
-      - uses: actions/checkout@v2
+      # Checkout the respository to the GitHub Actions runner
+      - name: Checkout
+      - uses: actions/checkout@v3
 
-      - name: Install Homebrew
-        run: |
-          /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-
-      - name: Run brew bundle
-        run: |
-          brew bundle
-          brew link --overwrite cocoapods
-          brew unlink go@1.20
-          brew link --overwrite go
+      # Initialize and place dotfiles
+      - name: Setup dotfiles
+        run: make

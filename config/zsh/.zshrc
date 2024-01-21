@@ -178,7 +178,7 @@ setopt histignorespace           # skip cmds w/ leading space from history
 export HSTR_CONFIG=hicolor       # get more colors
 bindkey -s "\C-r" "\C-a hstr -- \C-j"     # bind hstr to Ctrl-r (for Vi mode check doc)
 
-# path for flutter tool 
+# path for flutter tool
 export PATH="$PATH:$HOME/dev/flutter/bin"
 
 # pyenv settings
