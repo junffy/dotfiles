@@ -11,7 +11,7 @@ link_macos:
 	script/link_macos.sh
 
 # Link dotfiles for arch linux.
-link_macos:
+link_arch_linux:
 	script/link_arch_linux.sh
 
 # Set macOS system preferences.
